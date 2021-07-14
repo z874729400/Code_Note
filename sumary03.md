@@ -198,7 +198,6 @@ max($arr)//返回数组中最大的数字，前提必须是int类型，所以需
                 $("#fee_boat_weekdays").val(data['half_fee_wd']);
                 $("#fee_boat_holiday").val(data['half_fee_hd']);
             },
-
             error: function(jqXHR,textStatus){
                 console.log(jqXHR,textStatus);
             }
@@ -208,19 +207,19 @@ max($arr)//返回数组中最大的数字，前提必须是int类型，所以需
 ## 5.Jquery常用的一些语法、节点操作
 
 ```js
-removeClass()
-addClass()
-$('#' + error_id).css({ "display": "block", "color": "red" })
-$("#"+id+"_error").parent().parent().addClass("tr_error");
+  removeClass()
+  addClass()
+  $('#' + error_id).css({ "display": "block", "color": "red" })
+  $("#"+id+"_error").parent().parent().addClass("tr_error");
 
-if($("#img01").next("br").length == 0){
-	 $("#img01").after("<br>");					
-}
+  if($("#img01").next("br").length == 0){
+ 	  $("#img01").after("<br>");					
+  }
 
- //获取第2个li节点   
- var $li_2=$("ul li:eq(1)");
+  //获取第2个li节点   
+  var $li_2=$("ul li:eq(1)");
 
- //1.创建节点
+  //1.创建节点
   //创建2个li节点,要求这2个li节点包含文本包含属性title
 
   var $dm1=$("<li title='西瓜44'>西瓜</li>");
@@ -237,8 +236,8 @@ if($("#img01").next("br").length == 0){
 
   $("ul").prepend($dm2);
 
-//2.插入节点
-//用2种方式来将创造的第1个节点添加到ul下的最后一个子节点
+  //2.插入节点
+  //用2种方式来将创造的第1个节点添加到ul下的最后一个子节点
 
   //$ulDm.append($dm1);
 
@@ -268,50 +267,50 @@ if($("#img01").next("br").length == 0){
 
   //$dm3.insertBefore($li_2);
 
-//3.自杀:直接找到我们要操作的节点删除即可.
+  //3.自杀:直接找到我们要操作的节点删除即可.
 
- $("ul li:eq(1)").remove();
+  $("ul li:eq(1)").remove();
 
- jquery种删除掉的节点还可以继续获得
+  jquery种删除掉的节点还可以继续获得
 
-var $dm=$("ul li:eq(1)").remove();
+  var $dm=$("ul li:eq(1)").remove();
 
-$dm.appendTo($("ul"));
+  $dm.appendTo($("ul"));
 
-JQuery中删除节点可以加过滤条件
+  JQuery中删除节点可以加过滤条件
 
-$("ul li").remove("li[title!=菠萝]"); 
+  $("ul li").remove("li[title!=菠萝]"); 
 
-获取第2个li节点后,将其元素中的内容清空
+  获取第2个li节点后,将其元素中的内容清空
 
-$("ul li:eq(1)").empty();
+  $("ul li:eq(1)").empty();
 
-//4.遍历节点操作
-利用JQuery的chldren方法来获取页面上所有的body子元素
+  //4.遍历节点操作
+  利用JQuery的chldren方法来获取页面上所有的body子元素
 
-children()方法只考虑子元素而不考虑任何后代元素。。
+  children()方法只考虑子元素而不考虑任何后代元素。
 
-alert($("body").children().length);
+  alert($("body").children().length);
 
-var dms=$("body").children();
+  var dms=$("body").children();
 
-for(var i=0;i<dms.length;i++){
+  for(var i=0;i<dms.length;i++){
 
-alert(dms[i].innerHTML);
+  alert(dms[i].innerHTML);
 
  
 
-next（）方法获取匹配元素后面紧临的同辈元素
+  next（）方法获取匹配元素后面紧临的同辈元素
 
-prev（）方法获取匹配元素前面紧临的同辈元素。
+  prev（）方法获取匹配元素前面紧临的同辈元素。
 
-siblings（）匹配元素前后所有的同辈元素。
+  siblings（）匹配元素前后所有的同辈元素。
 
-页面加载完毕之后,获取p节点前的同辈元素,输出其文本内容
+  页面加载完毕之后,获取p节点前的同辈元素,输出其文本内容
 
-页面加载完毕之后,获取p节点所有的同辈元素
+  页面加载完毕之后,获取p节点所有的同辈元素
 
-window.onload=function(){
+  window.onload=function(){
 
       //获取p节点之后所有的同辈元素
 
@@ -346,40 +345,40 @@ window.onload=function(){
          alert(dms[i].innerHTML);
 
       }
-//5.其他
+  //5.其他
     
- //* toggle模拟了鼠标的连续点击事件
+  //* toggle模拟了鼠标的连续点击事件
 
- $("h5.head").toggle(function(){
+  $("h5.head").toggle(function(){
 
- alert("1111");
+  alert("1111");
 
- },function(){
+  },function(){
 
-  alert("22222");
+   alert("22222");
 
-},function(){
+  },function(){
 
-  alert("3333");
+   alert("3333");
 
- });
+  });
 
  
 
- $("h5.head").toggle(function(){
+  $("h5.head").toggle(function(){
 
     $(this).next().show();
 
- },function(){
+  },function(){
 
     $(this).next().hide();
 
- });
+  });
     
- //mouseover、mouserout
- //show()/hide()
+  //mouseover、mouserout
+  //show()/hide()
     
- //each（）
+  //each（）
     $("button").click(function(){
        $("li").each(function(){
        alert($(this).text())；

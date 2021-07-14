@@ -55,3 +55,6 @@ word-wrap: break-word;
 retun date('Y-m-d H:i:s',time());
 ```
 
+## 8.WinSCP find 文件
+
+![image-20210629102229067](file://C:\Users\mid2067\AppData\Roaming\Typora\typora-user-images\image-20210629102229067.png?lastModify=1626238347)

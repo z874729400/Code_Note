@@ -1,0 +1,19 @@
+# Zend案件总结04
+
+## 1.in的使用和查询结果去重
+
+```php
+        $select = $this->_db->select()
+        ->from('trn_schedule_charter',array('plan_no'));
+        $ret = $this->_db->fetchAll($select);
+        $data = [];
+        foreach($ret as $key => $value) {
+            $ret[$key] = "'" . $value['plan_no'] . "'";
+        }
+        $ret = array_unique($ret);
+        $where = implode(',', $ret);
+        $select2 = $this->_db->select()
+        ->from('mst_plan_charter',array('plan_name','plan_no'))
+        ->where("plan_no in ($where)");
+```
+
