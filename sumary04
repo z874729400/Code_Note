@@ -17,3 +17,11 @@
         ->where("plan_no in ($where)");
 ```
 
+## 2.Jquery节点操作
+
+empty()可以清空元素下的所有子节点
+
+remove()清除单个节点
+
+append($dm)添加子节点
+
