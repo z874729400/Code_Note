@@ -129,3 +129,27 @@ disablePictureInPicture //把画中画隐藏
 filter: invert(1);
 ```
 
+## js实现图片预加载
+
+```js
+  var images = new Array();
+  function preload() {  
+      for (i = 0; i < preload.arguments.length; i++) {  
+          images[i] = new Image()  
+          images[i].src = preload.arguments[i]  
+      }  
+  }
+  preload(  
+      "/mc/images/product-show/product-NMAX-155.jpg",  
+      "/mc/images/product-show/product-oil.jpg",  
+      "/mc/images/product-show/product-FUTURE.jpg",
+      "/mc/images/product-show/banner-tracer900gt.jpg"
+  );
+```
+
+## 隐藏页面滚动条
+
+```css
+    ::-webkit-scrollbar{display: none;}
+```
+
